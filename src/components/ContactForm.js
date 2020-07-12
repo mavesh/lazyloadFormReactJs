@@ -74,11 +74,11 @@ class ContactForm extends React.Component {
   checkAllFieldIsValid() {
     let blnIsFormvalid = false;
     const formKeysList = Object.keys(errorMessage);
-    for (let i = 0; i < formKeysList.length; i++) {
-      if (!this.state[formKeysList[i]]) {
+    for (let key of formKeysList) {
+      if (!this.state[key]) {
         blnIsFormvalid = false;
         break;
-      } else if (this.state[errorMessage[formKeysList[i]]] !== "") {
+      } else if (this.state[errorMessage[key]] !== "") {
         blnIsFormvalid = false;
         break;
       } else {
