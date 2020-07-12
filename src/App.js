@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  NavLink,
+} from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
+
+const HomeComponent = lazy(() => import("./components/Home"));
+const ContactFormComponent = lazy(() => import("./components/ContactForm"));
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <RouterLink />
+        <Suspense fallback={<div>Loading....</div>}>
+          <Switch>
+            <Route exact path="/" component={HomeComponent}></Route>
+            <Route path="/contact" component={ContactFormComponent}></Route>
+          </Switch>
+        </Suspense>
+      </Router>
     </div>
+  );
+}
+
+function RouterLink() {
+  return (
+    <nav className="nav-bar">
+      <ul>
+        <li>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">
+            Contact
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
