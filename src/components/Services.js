@@ -1,17 +1,15 @@
-import React, { Component, lazy, Suspense } from "react";
+import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Link,
-  Redirect,
   useHistory,
 } from "react-router-dom";
 
 export default class Services extends Component {
   constructor(props) {
     super(props);
-    console.log("props", props);
   }
   render() {
     return (
