@@ -86,7 +86,6 @@ class ContactForm extends React.Component {
       }
     }
     this.setState({ blnIsFormvalid });
-    console.log("blnIsFormvalid", blnIsFormvalid);
   }
 
   removeErrorMessage(errorMessageState) {

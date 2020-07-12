@@ -10,6 +10,7 @@ import "./App.css";
 
 const HomeComponent = lazy(() => import("./components/Home"));
 const ContactFormComponent = lazy(() => import("./components/ContactForm"));
+const ServicesComponent = lazy(() => import("./components/Services"));
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={HomeComponent}></Route>
             <Route path="/contact" component={ContactFormComponent}></Route>
+            <Route path="/services" component={ServicesComponent}></Route>
           </Switch>
         </Suspense>
       </Router>
@@ -39,6 +41,11 @@ function RouterLink() {
         <li>
           <NavLink to="/contact" activeClassName="active">
             Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/services" activeClassName="active">
+            Services
           </NavLink>
         </li>
       </ul>
