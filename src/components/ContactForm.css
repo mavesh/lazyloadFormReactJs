@@ -23,24 +23,39 @@ input[type="submit"] {
   margin-top: 16px;
 }
 
+input[type="radio"] {
+  cursor: pointer;
+}
+
 .form-container h1 {
   text-align: center;
   color: #4caf50;
+  font-size: 25px;
 }
 
 .form-container label {
   margin-bottom: 10px;
 }
 
+.main-container {
+  width: 100%;
+}
+
 .form-container {
   border-radius: 5px;
   background-color: black;
   padding: 20px;
-  max-width: 300px;
   margin: 0 auto;
-  width: 100%;
+  width: 33%;
   margin-top: 10px;
   color: aliceblue;
+  margin-right: 2px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.select-box {
+  color: black;
 }
 
 .disabled {

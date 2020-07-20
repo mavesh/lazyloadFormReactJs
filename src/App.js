@@ -5,8 +5,8 @@ import {
   Switch,
   NavLink,
 } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
+import "./components/ContactForm.css";
 
 const HomeComponent = lazy(() => import("./components/Home"));
 const ContactFormComponent = lazy(() => import("./components/ContactForm"));
